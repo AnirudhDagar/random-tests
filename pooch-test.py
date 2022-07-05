@@ -22,6 +22,6 @@ data = pooch.create(
 fname = data.fetch("ascent.dat")
 
 with open(fname, 'rb') as f:
-    ascent = array(pickle.load(f))
+    ascent = pickle.load(f)
 
 print(ascent)
