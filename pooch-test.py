@@ -13,7 +13,7 @@ data = pooch.create(
     registry={
         "ascent.dat": "e8a84939484463ab8051aedc5b40aa262ab33a91d6458a6cd13c6a1cad5a023d"
     },
-    registry_urls = {
+    urls = {
         "ascent.dat": "https://raw.githubusercontent.com/scipy-datasets/dataset-ascent/main/ascent.dat"
     }
 )
