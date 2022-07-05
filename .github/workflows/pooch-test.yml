@@ -10,17 +10,13 @@ on:
     branches: [ "main" ]
 
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: ["3.11-dev"]
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
       - name: Set up Python
@@ -32,6 +28,8 @@ jobs:
       - name: Install packages
         run: pip install pooch
 
-      # Runs a single command using the runners shell
       - name: Run a one-line script to check if pooch installation works fine
         run: python -c 'import pooch; import os; pooch.file_hash(os.path.join(os.path.abspath("."), "README.md"))'
+        
+      - name: Pooch fetch test
+        run: python pooch-test.py
