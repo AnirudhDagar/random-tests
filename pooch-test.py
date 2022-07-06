@@ -1,6 +1,10 @@
-import pooch
+import warnings
 import os
 import pickle
+
+with warnings.catch_warnings():
+    warnings.filterwarnings(action='ignore', category=DeprecationWarning)
+    import pooch
 
 
 data = pooch.create(
