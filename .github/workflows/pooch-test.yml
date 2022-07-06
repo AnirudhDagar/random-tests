@@ -32,4 +32,4 @@ jobs:
         run: python -c 'import pooch; import os; pooch.file_hash(os.path.join(os.path.abspath("."), "README.md"))'
         
       - name: Pooch fetch test
-        run: python pooch-test.py
+        run: python -W error pooch-test.py
